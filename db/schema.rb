@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203102802) do
+ActiveRecord::Schema.define(version: 20161210114210) do
 
   create_table "galleries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "gallery_id", limit: 16,    null: false
-    t.text     "images",     limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "gallery",    limit: 16, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
+  create_table "gallery_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "gallery_id"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gallery_id"], name: "index_gallery_images_on_gallery_id", using: :btree
+  end
+
+  add_foreign_key "gallery_images", "galleries"
 end

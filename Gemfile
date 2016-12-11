@@ -5,6 +5,8 @@ gem "haml-rails", "~> 0.9"
 gem 'fastimage'
 gem 'webp-ffi'
 gem 'materialize-sass'
+gem 'dragonfly', '~> 1.1.1'
+gem 'sidekiq'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

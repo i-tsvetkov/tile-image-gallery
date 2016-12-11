@@ -53,8 +53,8 @@ class Img < ImgBox
   def render
     "<a href=\"#{@src}\" target=_blank>"\
       "<picture>"\
-        "<source srcset=\"#{@src}.webp\" type=\"image/webp\">"\
-        "<source srcset=\"#{@src}\">"\
+        "<source src=\"#{@src}.webp\" type=\"image/webp\">"\
+        "<source src=\"#{@src}\">"\
         "<img width=#{@w.round} height=#{@h.round} src=\"#{@src}\">"\
       "</picture>"\
     "</a>"
